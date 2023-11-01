@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template.context_processors import csrf
-from .models import Users
+# from .models import Users
 from django.contrib import messages
 
 def home(request):
