@@ -1,15 +1,13 @@
 from django.shortcuts import render
 from django.template.context_processors import csrf
-# from .models import Users
+from .models import User
 from django.contrib import messages
 
 def home(request):
     return render(request,"home/home.html",{})
 
 def login(request):
-    c={}
-    c.update(csrf(request))
-    return render(request,'home/login.html',c)
+    return render(request,'home/login.html',{})
 
 def validate(request):
     if(request.method=='POST'):
@@ -19,7 +17,7 @@ def validate(request):
             # flag1 = False
             # flag2 = False
             try:
-                u = Users.objects.get(username = username)
+                u = User.objects.get(username = username)
             except:
                 messages.error(request,"Invalid Username")
                 return render(request,'home/login.html') 
@@ -48,3 +46,17 @@ def validate(request):
     
     else:
         return render(request,'home/login.html')
+
+def register(request):
+    return render(request,"home/registration.html",{})
+
+
+def add_user(request):
+    if(request.method=='POST'):
+        username = request.POST.get('username','')
+        password = request.POST.get('password','')
+    u = User()
+    u.username = username
+    u.password = password
+    u.save()
+    return render(request,"home/login.html",{})
