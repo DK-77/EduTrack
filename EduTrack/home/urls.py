@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home,login,validate,register,add_user
+from .views import home,login,validate,register,add_user,plot
 
 app_name = 'home'
 
@@ -9,4 +9,5 @@ urlpatterns = [
     path('validate/', validate, name='validate'),
     path('register/', register, name='register'),
     path('add_user/', add_user, name='add_user'),
+    path('plot/<str:p1>/<str:p2>/', plot, name='plot'),
 ]

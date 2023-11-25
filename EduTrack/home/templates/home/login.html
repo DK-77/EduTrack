@@ -1,32 +1,21 @@
-{% load static %}
+<!-- {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="{% static 'login/images/icons/favicon.ico' %}"/>
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animate/animate.css' %}">
-<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
-<!--===============================================================================================-->
 </head>
 <body>
 	
@@ -43,7 +32,7 @@
 				<form class="login100-form validate-form" action="{% url 'home:validate' %}" method="POST">
                     {% csrf_token %}
 					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
+						<i class="zmdi zmdi-lavisualizendscape"></i>
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
@@ -68,9 +57,9 @@
 					</div>
 
 					<div class="text-center p-t-90">
-						<!-- <a class="txt1" href="#">
+						<a class="txt1" href="#">
 							Forgot Password?
-						</a> -->
+						</a>
 					</div> 
 
 				</form>
@@ -81,22 +70,65 @@
 
 	<div id="dropDownSelect1"></div>
 	
-<!--===============================================================================================-->
 	<script src="{% static 'login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
 	<script src="{% static 'login/vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
 	<script src="{% static 'login/vendor/bootstrap/js/popper.js' %}"></script>
 	<script src="{% static 'login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
 	<script src="{% static 'login/vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
 	<script src="{% static 'login/vendor/daterangepicker/moment.min.js' %}"></script>
 	<script src="{% static 'login/vendor/daterangepicker/daterangepicker.js' %}"></script>
-<!--===============================================================================================-->
 	<script src="{% static 'login/vendor/countdowntime/countdowntime.js' %}"></script>
-<!--===============================================================================================-->
 	<script src="{% static 'login/js/main.js' %}"></script>
 
 </body>
+</html>
+ -->
+
+ {% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'registration/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}" />
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'registration/css/style.css' %}" />
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form action="{% url 'home:validate' %}" method="POST">
+					{% csrf_token %}
+					<h3>Login</h3>
+					<p></p>
+					<label class="form-group">
+						<input type="text" name="username" class="form-control"  required>
+						<span>Username</span>
+						<span class="border"></span>
+					</label>
+					<label class="form-group">
+						<input type="password" name="pass" class="form-control"  required>
+						<span for="">Password</span>
+						<span class="border"></span>
+					</label>
+					<!-- <label class="form-group" >
+						<textarea name="" id="" class="form-control" required></textarea>
+						<span for="">Your Message</span>
+						<span class="border"></span>
+					</label> -->
+					<button>Login 
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body>
 </html>
